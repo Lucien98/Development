@@ -31,3 +31,6 @@ Note:
 2. file_name: the name of the file
 3. file_path: the path of the directory where the file locate
 
+## 1st May
+### compilation of LaTeX
+please refer to [LaTex/compilation.md](../LaTeX/compilation.md) and [LaTeX/reference.md](../LaTeX/reference.md)
