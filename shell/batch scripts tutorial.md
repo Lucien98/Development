@@ -16,7 +16,7 @@ The syntax of `for /f`:
 	for /f ["options"] %%i in ('command') do command
 
 1. `for /f` 
-2. `["options"]` - "delims=", note there's no [] in the instantiation
+2. `["options"]` - "delims=", note there's no [] in the instantiation. The explanation see at [for /f命令之—Delims和Tokens用法&总结](https://blog.csdn.net/kagurawill/article/details/114982328)
 3. `%%i`
 4. `in`
 5. `('command')` - ('dir /b *.*')
@@ -32,3 +32,7 @@ Note that `%var:%str%=%` is the syntax of replacing text within a variable, and 
 
 You can use `%%~nf` to get filename only as described in the reference for [`for`](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/for). Please refer to [Batch: Remove file extension](https://stackoverflow.com/questions/3215501/batch-remove-file-extension).
 
+## 2nd May
+### Some lessons learned from batch file
+1. **Do not** debug batch file in sublime text, debug in command window
+2. batch has a very strict usage of space, so be extremely careful.

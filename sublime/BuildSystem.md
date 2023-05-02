@@ -33,4 +33,4 @@ Note:
 
 ## 1st May
 ### compilation of LaTeX
-please refer to [LaTex/compilation.md](../LaTeX/compilation.md) and [LaTeX/reference.md](../LaTeX/reference.md)
+please refer to [LaTex/compilation.md](../LaTeX/compilation.md) and [LaTeX/reference.md](../LaTeX/reference.md) and [Sublime中设置Latex自定义命令一次完成参考文献生成](https://blog.csdn.net/txh3093/article/details/107214454).
