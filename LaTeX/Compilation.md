@@ -12,7 +12,7 @@ Then today I suddenly know, this is not a problem of sublime, it is the problem 
 
 To avoid multiple compilation to get the final pdf file, many methods have been proposed, most of them use the shell or batch scripts. These work allows us to not mannually compile the file many times. Instead, the work was done automatically by the script. However, it is still a time-comsuming task. So now, I introduce a method where we wait somewhat long time in the first compilation, and wait little time the other compilations.
 
-First, change the `builder-settings` of `windows` (originally `windows: {},`) in `LaTeXTools.sublime-settings` into `windows:{""script_commands":["artratex.bat"]"}`. The `atratex.bat` could be found at [here](https://github.com/mohuangrui/ucasthesis/blob/master/artratex.bat), and we should change it according to [reference.md](./reference.md). (And this change could be improved.)
+First, change the `builder-settings` of `windows` (originally `windows: {},`) in `LaTeXTools.sublime-settings` into `windows:{""script_commands":["artratex.bat"]"}`. The `atratex.bat` could be found at [here](https://github.com/mohuangrui/ucasthesis/blob/master/artratex.bat), and we should change it according to [reference.md](./Reference.md). (And this change could be improved.)
 
 Second, change the `"output_directory": ""` into `"output_directory": "Tmp"` in `LaTeXTools.sublime-settings`.
 

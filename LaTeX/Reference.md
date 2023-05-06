@@ -65,7 +65,7 @@ change
 Remark: 
 
 - There are several bibliographystyle: `plain`(see in chapterbib branch of MasterThesis), `alpha`(see in optaes).
-- How to build latex file in sublime with a script, avioding compiling for a long time every compilation. Please refer to [compilation.md](./compilation.md)
+- How to build latex file in sublime with a script, avioding compiling for a long time every compilation. Please refer to [compilation.md](./Compilation.md)
 
 ## 2nd May
 ### Difference between `\citep`, `\cite` and `\citet`
