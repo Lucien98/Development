@@ -48,4 +48,4 @@ When the protocol is right, we could communicate with DSO and make it beep.
 
 After installed the NI-VISA, I ran findResources. And it gives "Insufficient location information or the device pr resource is not present in the system". And in output window, "Exception thrown: 'Ivi.Visa.NativeVisaException' in NationalInstruments.Visa.dll"
 
-
+It turns out when NI-VISA is installed,  if we did not open ni-max to add device, we cannot connet with the oscilloscope.
