@@ -248,3 +248,72 @@ So `git push -u origin main` matches `git push [-u | --set-upstream] [<repositor
 So this explains the question raised in the very start of this document - why ":" is missing?
 
 And to record the method of imposing a bibliography in the end of every chapter, I created a new branch. In fact, at first, I thought maybe I could store the changes in my `main` branch, and then I created a new branch then I commit the changes to the new branch. It is not feasible in `git`. After understanding the branch features of git(the method which is very close to solve my problem is [git stash](https://blog.csdn.net/AsheAndWine/article/details/79003270)), I decided to just clone the repository, create a new branch right away and then copy the changes into this new branch and finally commit it. It worked well.
+
+## 10 May
+### Another solution to [use gitblit as a git server](#use-gitblit-as-a-git-server).
+Please refer to [Host key verificaiton failed](#host-key-verificaiton-failed) and [Configuring SSH in GitBlit (ssh-dss issue)](https://groups.google.com/g/gitblit/c/1TOme_0mLno).
+
+As told in [use gitblit as a git server](#use-gitblit-as-a-git-server), following information was given:
+
+    Unable to negotiate with ::1 port 29418: no matching host key type found. Their offer: ssh-rsa,ssh-dss
+    fatal: Could not read from remote repository.
+
+And the solution to this is given in [Configuring SSH in GitBlit (ssh-dss issue)](https://groups.google.com/g/gitblit/c/1TOme_0mLno)
+
+    For those listening at home, here's my current workaround for connecting to myserver.example.com from a system that uses a v7 ssh client...
+    
+    Edit:
+    """
+        ~/.ssh/config
+    """
+    Adding:
+    """
+        Host myserver.example.com
+            HostName myserver.example.com
+            User myusername
+            HostKeyAlgorithms +ssh-dss
+    """
+
+But I use ssh-rsa rather than ssh-dss and I forgot to modify the last line into `HostKeyAlgorithms +ssh-rsa`,
+
+And I got:
+
+    E:\Visual Studio 2022\source\repos\RPVerif\x64\Release>    git push -u origin master
+    The authenticity of host '[localhost]:29418 ([::1]:29418)' can't be established.
+    DSA key fingerprint is SHA256:GuDym3Xq/qoi/UgkRA4VRkPsLHfVqHgvulAfLz/VZ04.
+    This key is not known by any other names.
+    Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+    Warning: Permanently added '[localhost]:29418' (DSA) to the list of known hosts.
+    ssh_dispatch_run_fatal: Connection to ::1 port 29418: incorrect signature
+    fatal: Could not read from remote repository.
+    
+    Please make sure you have the correct access rights
+    and the repository exists.
+    
+    E:\Visual Studio 2022\source\repos\RPVerif\x64\Release>    git push -u origin master
+    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    @    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+    Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+    It is also possible that a host key has just been changed.
+    The fingerprint for the RSA key sent by the remote host is
+    SHA256:k7dWtUe/9nqh+TqiMeZjrghSi+miPd6DkErCJitIe/g.
+    Please contact your system administrator.
+    Add correct host key in /c/Users/\345\221\250\351\224\213/.ssh/known_hosts to get rid of this message.
+    Offending DSA key in /c/Users/\345\221\250\351\224\213/.ssh/known_hosts:4
+    Host key for [localhost]:29418 has changed and you have requested strict checking.
+    Host key verification failed.
+    fatal: Could not read from remote repository.
+    
+    Please make sure you have the correct access rights
+    and the repository exists.
+
+And the there is 1 more line in `known_hosts`: 
+
+    [localhost]:29418 ssh-dss AAAAB3NzaC1kc3MAAAEBALW34ebFafnXX0ytpvgFdT2bBrXJFJ3Hc9xKUSgZrvJmmuh2TQgKrblOjeif1L0sztM1S6Z52fYVOfnaBlXK/zMx3tdVi7kRcuIh3shpw2pRHUGpidWLeZxxCxgjWnWPxeUVwkAYDah/n+MzhMZ5X7pBiWXCZrMvCFK1dEjwJOP6uHa2J2DZc3sQmQcLe9jSfirq1HAMXijL+FAbVarthQIoa1VOHYPMBFvg5ReJgaJtIfShD94dG6epprA0qotbqWFk0pFoqqVu1+UWGFtXllUuwRjlX8Yo8ff+pu0nfUrG+4uqyIvr5Nspe2ZJqV67xq6jwUV6OnJek8BUmkBTCEUAAAAhAPBrZZDHj9xMeh65pbMgfePRu0noDb5JmJ65FJGxNXQjAAABAQCWvlMe3voMZGnF0ts32qEsQ3cQ6Fe+boylhqnIlCrH44QQS/VqVKGfjOIY3p+1r2yWfnXV/AIx6CTF+BoSyTjIdF6fXzpVLvJaRu4ogAdzOHhQr7CEdR5bNZF5nlAfo6G9yBt9HtcgYZhDaa9vvxZDAbP3FoaMb9JozrukOHMOC6Al/VpBiFxiwj+n2kdCT7c7dVqbvXvqH+KfVILiJXtpzA/U2ylA5Oaspn569Q6oG3c8E60dJ4j+r5mhYJ6JK/GC9jmvUxEK1tG8va8Y3gerwUo0Y6ntYRSNt2Qt1QHA70BJexeQ99VjZQQf9nhTVgxIFNL1DpvMNy+eEZ9LQFXOAAABACCkJAEyPjtWrqT9vGFyDkLHgj8/FbV1aBCCmdn00rw6dTNwicEa4ijKBvzdVv5bjSe/PktPR/yfQdX7sBuggvnaQH/THD5tRQY7mS1tEgvQ8BC1xNAkrSAzP6tuAzhhuB1pbtPvMJ1TvEhCOEgGJxyf4Ew60BsJKsmU6f4rB0woRNYsHO364zW1UqOvELakw5/MSwjhhr8/j0V122cSl9HaXhNFVttKkI2UbqZoQSeVRctm0/oMbXueYs6/s76bSdU7yGm9TNldwKFQxoOG8TsSe8xw+cCdLZPdnwMMd5LPgFVoyCdiTb6tHrsv9FX2AF6V6DcgdIstM81DLWzyink=
+
+after delete this line, and change `HostKeyAlgorithms +ssh-dss` into `HostKeyAlgorithms +ssh-rsa`, it worked.
+
+Related matirial: [ssh原理以及与https的区别](https://blog.csdn.net/PeipeiQ/article/details/80702514).
+

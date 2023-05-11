@@ -6,3 +6,9 @@ When we add new files into the project, we should do it mannually, right click t
 
 ### How to make sylvan report its statistics
 `#define SYLVAN_STATS 1` in sylvan_config.h. It does not work now.
+
+## 10 May
+### How to make `assert` work in release version
+Debug > RPVerif Debug Properties > C/C++ > All Options > Preprocessor Definitions:
+
+  - delete `NDEBUG;`
