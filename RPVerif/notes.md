@@ -150,9 +150,25 @@ empty.
 
 
 ### next things to do
-  - remove dependency of eigen
+  - remove dependency of eigen (**half way**)
   - add command options to RPVerif(espeically the order option)
   - change the structure of RPVerif
   - fix the bug of skinny_sbox8_CMS1
   - make test vector to verify the changes of the code is right (or equivalent).
   <!-- -  -->
+
+## 12 May
+
+### next things to do
+  - [x] remove dependency of eigen
+  - [x] add command options to RPVerif(espeically the order option)
+  - [x] change the structure of RPVerif
+  - [x] remove the unnecessary `fixedSupportV` left from history
+  - [ ] fix the bug of skinny_sbox8_CMS1
+  - [ ] make test vector to verify the changes of the code is right (or equivalent).
+
+### What affects the efficiency
+When I run RPVerif the first time in the afternoon, it is much slower in small benchs.
+
+Is it because the program has ran before in the morning, so it is faster?
+
