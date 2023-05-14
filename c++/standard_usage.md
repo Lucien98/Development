@@ -51,4 +51,32 @@ Solution:
 
   - so: shared objects
   - dll: dynamic link library
-  - 
+
+## 13 May
+### Constructor of c++ class
+#### NodeContext
+  - No explict constructor, it has data types `int`, `pair`, `string`, `bool`, `pointer`.
+  - All pointers are initialized with `NULL` or the `new` keyword.
+#### RPVerif
+  - data types: `string`, `Graph`, `vector`, `O_d`, `map`, `pair`, `int`
+  - Some are initialized in constructor, some are initialized in declaration, and others are initialized somewhere else.
+#### BooleanMatrix
+
+## 14 May
+### Parser
+  - Parser generator
+      + lex, yacc
+      + ocamllex, ocamlyacc/menhir
+      + Abstract
+### Text to Abstract Syntax Tree
+  - only need unary, binary operator
+  - Homework [ast-interpreter](https://github.com/Lucien98/ast-interpreter)
+      + unaryExpr->getOpcode
+      + unaryExpr->getSubExpr
+      + Can parenExpr seen as a unaryExpr?
+      + What if there are two operators in one expression? There's no such case in ast-interpreter.
+
+### Parser of maskVerif
+I should read and learn it carefully.
+
+Maybe I should refer to the lexer of a [calculator](https://github.com/Scylardor/ocamlculator) in ocaml.

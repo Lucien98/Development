@@ -36,3 +36,14 @@ You can use `%%~nf` to get filename only as described in the reference for [`for
 ### Some lessons learned from batch file
 1. **Do not** debug batch file in sublime text, debug in command window
 2. batch has a very strict usage of space, so be extremely careful.
+
+
+## 13 May
+### Measure the execution time of a batch script
+Please refer to [How do I measure execution time of a command on the Windows command line?](https://stackoverflow.com/questions/673523/how-do-i-measure-execution-time-of-a-command-on-the-windows-command-line).
+	
+And I just replace the `cmd /c %*` of this [./timecmd.bat](./timecmd.bat) into `cmd /c test.bat` and it worked.
+
+## 14 May
+print 1 to 10 in windows cmd: `for /l %i in (1,1,10) do (echo %i)`
+

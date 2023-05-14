@@ -18,4 +18,4 @@ def print_by_col(string, n_row):
     print(s)
 
 if __name__ == "__main__":
-    print_by_col("", 4)
+    print_by_col("", 5)

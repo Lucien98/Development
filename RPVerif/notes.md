@@ -172,3 +172,34 @@ When I run RPVerif the first time in the afternoon, it is much slower in small b
 
 Is it because the program has ran before in the morning, so it is faster?
 
+## 13 May
+### cleaning up NodeContext.hpp
+  - remove `partition`
+  - delete comment
+  - remove `inRandom`
+  - remove `dirSuppV`
+  - remove `descendants`
+  - restruct `computeAuxiliaryTable`
+  - rename `gate_id` into `node_id`
+  - use function to reduce the length of `set_difference`, `set_intersection` and `set_union`
+
+### How do we extend Od now?
+Traverse `Od.second` in a reversed order, and if a elements of `Od.second` is in the `leakyOd`, extend it.
+
+  - Should we extend the element in leakyOd which has a descendant in `Od.second` first?
+
+### add `verify_single` option to RPVerif
+  - [Split a string by space into a string vector](https://stackoverflow.com/questions/10551125/boost-string-split-to-eliminate-spaces-in-words)
+      + `boost::algorithm::split(strings, opt.probes, is_any_of("\{, \}"), boost::token_compress_on);`
+      + However, it seems the character `{` and `}` cannot be a delimeter.
+  - [transfrom a string vector to a uin32_t vector](https://www.techiedelight.com/convert-vector-of-strings-to-vector-of-integers-in-cpp/)
+  - [Add exceptions](https://stackoverflow.com/questions/13419070/boost-program-options-exception-not-replacing-canonical-option-tag)
+
+### answer to [What affects the efficiency](#what-affects-the-efficiency)
+When the first time we run RPVerif, it is much slower in small benchs. This is due to the `dick cache`. 
+When running RPVerif, there are some operations involving file operations, it will affect the efficiency greatly.
+When we run it for the second time, there's `disk cache` where the cache of the file our program read before stores, so it is faster.
+
+**Conclusion**
+To faily comparing with `maskVerif`, we should exclude the time reading file and use the time in the `check_all` method of `maskVerif`.
+
