@@ -8,3 +8,17 @@
 
 3. When dso started with protocol other than `LXI(VXI11)` or we set the protocol into others, we won't get any response.\
     + here other protocol includes `TCPIP(VICP)`, `USBTMC`.
+
+
+## 30 May
+### Connection Exception
+1. When the oscilloscope is powered on, we did not login, we got the message `Insufficient location information or the device resource is not present in the system`
+2. we login, still `Insufficient location information or the device resource is not present in the system`
+3. the oscilloscope automatically started, still `Insufficient location information or the device resource is not present in the system`
+### Reason
+The oscilloscope is not connected to the Ethenet.
+
+## 31 May
+### keyword `internal` in C#
+
+

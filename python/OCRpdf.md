@@ -23,23 +23,23 @@ In `Ubuntu`,
   		* At first I think the reason is that the `pdf` file I am about to convert has many pages, and `acrobat` save the pdf into a single large image file, so I choose to split it.
   			- Split pdf
 
-				|			Content				|	pages	|
-				|	-							|		-	|
-				|			cover				|   1-4		|
-				|	 preface by translator		|	5-7		|
-				| Preface to the Second Edition	|	8		|
-				|		  Author’s Note			|	9-10	|
+				|			Content								|	pages	|
+				|	-													|		-		|
+				|			cover									|   1-4	|
+				|	 preface by translator		|		5-7	|
+				| Preface to the Second Edition	|	8	|
+				|		  Author’s Note		|	9-10	|
 				|		     Content			|	11-12	|
-				|		   Introduction			|	13-20	|
-				|			chapter 1			|	21-33	|
-				|			chapter 2			|	34-43	|
-				|			chapter 3			|	44-63	|
-				|			chapter 4			|	64-76	|
-				|			chapter 5			|	77-83	|
-				|			chapter 6			|	84-99	|
-				|			chapter 7			|	100-119	|
-				|			chapter 8			|	120-131	|
-				|			chapter 9			|	132-148	|
+				|		   Introduction		|	13-20	|
+				|			chapter 1				|	21-33	|
+				|			chapter 2				|	34-43	|
+				|			chapter 3				|	44-63	|
+				|			chapter 4				|	64-76	|
+				|			chapter 5				|	77-83	|
+				|			chapter 6				|	84-99	|
+				|			chapter 7				|	100-119	|
+				|			chapter 8				|	120-131	|
+				|			chapter 9				|	132-148	|
 				|			chapter 10			|	149-162	|
 				|			chapter 11			|	162-174	|
 				|			chapter 12			|	175-186	|
@@ -52,7 +52,7 @@ In `Ubuntu`,
 				|			chapter 19			|	285-290	|
 				|			chapter 20			|	291-301	|
 				|			chapter 21			|	302-313	|
-				|			Notes				|	314-331	|
+				|			Notes						|	314-331	|
 				
 			- And the error still occurs.
 		* The solution is in [acrobat pdf 导出图片时遇到“图像太宽，无法输出”的错误](https://blog.csdn.net/n_o_error/article/details/130359271). Just changing the resolution of the saved image will work.

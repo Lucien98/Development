@@ -203,3 +203,9 @@ When we run it for the second time, there's `disk cache` where the cache of the 
 **Conclusion**
 To faily comparing with `maskVerif`, we should exclude the time reading file and use the time in the `check_all` method of `maskVerif`.
 
+## 15 May
+### How does rank rule work?
+When extending Od, the full-rank subset of Od is never removed unless it only contains a single node and the node use one unique perfect mask. So there's no need to check the condition of rule 2 because at last the multiple subset of Od merged into one single set when Od is verifiable.
+
+## 28 May
+https://core.ac.uk/download/pdf/36694529.pdf

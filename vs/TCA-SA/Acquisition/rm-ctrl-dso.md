@@ -63,7 +63,7 @@ Next, I should do some investigations about `maui` 'cause I need to gather infor
 <center>
     <img src="Img/oscilloscope.png" width="400">
     <br>
-    <font size="3" face="楷体" color="#999"><u>示波器参数</u></font>
+    <font size="3" face="楷体" color="#999"><u>Scope settings</u></font>
 </center>
 
 ### Supported parameters

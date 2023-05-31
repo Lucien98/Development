@@ -29,3 +29,22 @@ Specificly, the working page is [How to: Inherit Forms Using the Inheritance Pic
 PicoScope don't support the offset of Y axis
 
 ### How to set the range and offset of Y axis
+
+
+## 15 May
+I want to add a middle class between the parent class and the child class
+### item template
+[How to: Create item templates](https://learn.microsoft.com/en-us/visualstudio/ide/how-to-create-item-templates?view=vs-2022).
+
+Note we should restart VS so we could see the template in `Add > New Item`. And while loading a template, VS will throw a security warning.
+
+### inherit?
+
+  - the `private` member could not be inherited by child class in C#.
+  - I did not delete the components which now belong to the child class of father class.
+
+#### How to do it right
+
+  - change the access level of components that should be inherited by child class from `private` into `protected`
+  - delete the components that are not needed by the parent class.
+  - in child class, comment the redeclaration of members in parent class.

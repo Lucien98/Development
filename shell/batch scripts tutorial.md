@@ -47,3 +47,10 @@ And I just replace the `cmd /c %*` of this [./timecmd.bat](./timecmd.bat) into `
 ## 14 May
 print 1 to 10 in windows cmd: `for /l %i in (1,1,10) do (echo %i)`
 
+## 16 May
+### How to see why a process is killed
+sudo dmesg | tail -7
+
+### What is the relationship between `--memory` and the verification result
+When the parameter for `--memory` is too big, for example 10G/12G/16G, the process tend to be killed.
+
